@@ -30,25 +30,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
         FirebaseApp.initializeApp(this);
-        FirebaseAppCheck.getInstance().installAppCheckProviderFactory(
-                DebugAppCheckProviderFactory.getInstance()
-        );
 
         // Find buttons by their IDs
         Button button1 = findViewById(R.id.id1);
         Button button2 = findViewById(R.id.id2);
         Button button3 = findViewById(R.id.id3);
 
-        // activate()
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAppCheck.getInstance().installAppCheckProviderFactory(
                         DebugAppCheckProviderFactory.getInstance()
                         );
+                System.out.println("activated debug provider");
             }
         });
-        // firestore request
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-        // getToken()
+
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
